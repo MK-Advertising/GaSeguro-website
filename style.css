@@ -77,13 +77,34 @@ body {
 
 /* Hero Section con Imagen de Fondo */
 .hero {
+  position: relative; /* Permite posicionar la capa blanca encima  */
   padding: 160px 0;
-  background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
-              url('hero-gas-lp-cdmx.jpg');
+  background-image: url('hero-gas-lp-cdmx.jpg'); /* Imagen de infraestructura limpia [cite: 337] */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  overflow: hidden;
+}
+
+/* Esta es la capa blanca con transparencia que pediste [cite: 330, 352] */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.75); /* Transparencia blanca para claridad visual  */
+  z-index: 1;
+}
+
+/* Mantiene el texto por encima de la transparencia  */
+.hero-container {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-badge {
